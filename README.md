@@ -1,3 +1,9 @@
+**Updated** Setup Steps:
+1. Run install script
+    ```
+    sudo curl -sL https://raw.githubusercontent.com/mi-enfra/docker-dev-setup/master/setup.sh | /bin/bash
+    ```
+
 Setup Steps:
 1. Install Ubuntu Server 18.04
 2. `sudo apt update -y && sudo apt upgrade -y`
