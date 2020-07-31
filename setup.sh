@@ -14,3 +14,9 @@ sudo usermod -aG docker ${USER}
 # Source: https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+# Source: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04
+sudo apt install git php-cli php-mbstring unzip -y
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH=$(curl https://composer.github.io/installer.sig)
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
